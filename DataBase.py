@@ -1,7 +1,6 @@
 from neo4jrestclient.client import GraphDatabase
-from neo4jrestclient import client
 
-db = GraphDatabase("http://localhost:7474", username="neo4j", password="mypassword")
+db = GraphDatabase("https://localhost:7687", username="neo4j", password="sistema")
 
 
 # ---------------Categorias--------------------
