@@ -11,7 +11,7 @@ transaction_list = df.values.tolist()
 transaction_execution_commands = []
 
 for i in transaction_list:
-    neo4j_create_statemenet = "create (n:Restaurante {Nombre: '" + str(i[0]) + "' }) "
+    neo4j_create_statemenet = "create (n:Restaurante {Especialidad: '" + str(i[0]) + "', Nombre: '" + str(i[1]) + "'}) "
     transaction_execution_commands.append(neo4j_create_statemenet)
 
 
@@ -24,4 +24,3 @@ def execute_transactions(transaction_execution_commands):
 
 execute_transactions(transaction_execution_commands)
 
-execute_transactions(transaction_execution_commands)
