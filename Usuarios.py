@@ -38,113 +38,111 @@ def datos ():
         except Exception:
             print()
             
-datos()
-        
-        
-#Se crea "Loop" de las opciones, mientras lo ingresado no sea 3
-while opcion_datos !=3:   
-    if opcion_datos == 1:
-        userlista = []
-
-        input_file = csv.DictReader(open("usuarios.csv"))
-
-        for row in input_file:
-            userlista.append(row)
+   
             
-                
             
-        user1 = {}
+    #Se crea "Loop" de las opciones, mientras lo ingresado no sea 3
+    while opcion_datos !=3:   
+        if opcion_datos == 1:
+            userlista = []
 
-        users = user1["usuarios"] = input("Introduzca un nombre de usuario o (M) si desea regresar al menú principal: ")
+            input_file = csv.DictReader(open("usuarios.csv"))
+
+            for row in input_file:
+                userlista.append(row)
+                
                     
-        if users == "M":
-                print("")
-                datos()
                 
-        if users != "M":
-            user1["contraseñas"] = input("Introduzca una contraseña: ")
-                    
-            comprobar = False    
-            for userexist in userlista:
-                if userexist ["usuarios"] == user1 ["usuarios"] and userexist ["contraseñas"] == user1 ["contraseñas"]:
-                    comprobar = True
-                            
-                elif userexist ["usuarios"] != user1 ["usuarios"] and userexist ["contraseñas"] != user1 ["contraseñas"]:
-                    comprobar = False
-                            
-                            
-                
-            if comprobar == True:
-                print("Se logro entrar")
-                opcion_datos = 3
-                
-            elif comprobar == False:
-                print ("Usuario no  existente, favor ingrese nuevamente")
-                print("")
-                
+            user1 = {}
+
+            users = user1["usuarios"] = input("Introduzca un nombre de usuario o (M) si desea regresar al menú principal: ")
                         
-            
-                     
-                       
+            if users == "M":
+                    print("")
+                    datos()
+                    
+            if users != "M":
+                user1["contraseñas"] = input("Introduzca una contraseña: ")
+                        
+                comprobar = False    
+                for userexist in userlista:
+                    if userexist ["usuarios"] == user1 ["usuarios"] and userexist ["contraseñas"] == user1 ["contraseñas"]:
+                        comprobar = True
+                                
+                    elif userexist ["usuarios"] != user1 ["usuarios"] and userexist ["contraseñas"] != user1 ["contraseñas"]:
+                        comprobar = False
+                                
+                                
+                    
+                if comprobar == True:
+                    print("")
+                    opcion_datos = 3
+                    
+                elif comprobar == False:
+                    print ("Usuario no  existente, favor ingrese nuevamente")
+                    print("")
+                    
+                            
+                
+                         
+                           
 
 
 
-            
-    if opcion_datos == 2:
-            
-        guardado = []
+                
+        if opcion_datos == 2:
+                
+            guardado = []
 
-        input_file = csv.DictReader(open("usuarios.csv"))
+            input_file = csv.DictReader(open("usuarios.csv"))
 
-        for row in input_file:
-            guardado.append(row)
+            for row in input_file:
+                guardado.append(row)
+                    
                 
             
-        
-        print("Registros previos: " + str(len(guardado)))
+            print("Registros previos: " + str(len(guardado)))
 
-        def crear ():
-            a = False
-            while not a:
-                user = {}
+            def crear ():
+                a = False
+                while not a:
+                    user = {}
 
-                user["usuarios"] = input("Introduzca un nombre de usuario: ")
-         
-                user["contraseñas"] = input("Introduzca una contraseña: ")
-        
-                comprobar = False    
-                for userOld in guardado:
-                    if userOld ["usuarios"] == user ["usuarios"] and userOld ["contraseñas"] == user ["contraseñas"]:
-                        comprobar = True
-                        print ("Usuario ya existente")
-                        print("")
-                    
-                    
-                    
-                    
-                    elif userOld ["usuarios"] != user ["usuarios"] and userOld ["contraseñas"] != user ["contraseñas"]:
-                        comprobar = False
-                    
-                    
-                    
-                if comprobar == False:
-                    print ("Usuario agregado correctamente")
-                    print("")
-                    guardado.append(user)
-                    a = True
+                    user["usuarios"] = input("Introduzca un nombre de usuario: ")
+             
+                    user["contraseñas"] = input("Introduzca una contraseña: ")
             
-        crear()
-        
-        with open ("usuarios.csv" , "w") as f:
-            w = csv.DictWriter(f, guardado[0].keys())
-            w.writeheader()
-            for user in guardado:
-                w.writerow(user)   
-          
-        datos()
+                    comprobar = False    
+                    for userOld in guardado:
+                        if userOld ["usuarios"] == user ["usuarios"] and userOld ["contraseñas"] == user ["contraseñas"]:
+                            comprobar = True
+                            print ("Usuario ya existente")
+                            print("")
+                        
+                        
+                        
+                        
+                        elif userOld ["usuarios"] != user ["usuarios"] and userOld ["contraseñas"] != user ["contraseñas"]:
+                            comprobar = False
+                        
+                        
+                        
+                    if comprobar == False:
+                        print ("Usuario agregado correctamente")
+                        print("")
+                        guardado.append(user)
+                        a = True
+                
+            crear()
+            
+            with open ("usuarios.csv" , "w") as f:
+                w = csv.DictWriter(f, guardado[0].keys())
+                w.writeheader()
+                for user in guardado:
+                    w.writerow(user)   
+              
+            datos()
 
-def bienvenida():
-    print("Bienvenido, has ingresado al programa :D")
-    
-bienvenida()
+
+
 
