@@ -50,7 +50,7 @@ while opcion_datos !=3:
 
         for row in input_file:
             userlista.append(row)
-            print(userlista)
+            
                 
             
         user1 = {}
@@ -147,3 +147,4 @@ def bienvenida():
     print("Bienvenido, has ingresado al programa :D")
     
 bienvenida()
+
