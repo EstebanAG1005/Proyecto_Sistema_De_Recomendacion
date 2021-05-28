@@ -6,7 +6,7 @@ import csv
 
 
 def datos ():
-    print("--------------- Systema de Recomendacion de Restaurantes ---------------")
+    print("--------------- Sistema de Recomendacion de Restaurantes ---------------")
     print("¿Ya tienes una cuenta?")
     print("1. Iniciar Sesión")
     print("¿Eres nuevo aquí?")
