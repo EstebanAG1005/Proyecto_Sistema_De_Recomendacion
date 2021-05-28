@@ -108,30 +108,35 @@ def datos ():
                 while not a:
                     user = {}
 
-                    user["usuarios"] = input("Introduzca un nombre de usuario: ")
-             
-                    user["contraseñas"] = input("Introduzca una contraseña: ")
-            
-                    comprobar = False    
-                    for userOld in guardado:
-                        if userOld ["usuarios"] == user ["usuarios"] and userOld ["contraseñas"] == user ["contraseñas"]:
-                            comprobar = True
-                            print ("Usuario ya existente")
-                            print("")
-                        
-                        
-                        
-                        
-                        elif userOld ["usuarios"] != user ["usuarios"] and userOld ["contraseñas"] != user ["contraseñas"]:
-                            comprobar = False
-                        
-                        
-                        
-                    if comprobar == False:
-                        print ("Usuario agregado correctamente")
+                    users = user["usuarios"] = input("Introduzca un nombre de usuario o (M) si desea regresar al menú principal: ")
+                    
+                    if users == "M":
                         print("")
-                        guardado.append(user)
-                        a = True
+                        datos()
+                        
+                    if users != "M":
+                        user["contraseñas"] = input("Introduzca una contraseña: ")
+            
+                        comprobar = False    
+                        for userOld in guardado:
+                            if userOld ["usuarios"] == user ["usuarios"] and userOld ["contraseñas"] == user ["contraseñas"]:
+                                comprobar = True
+                                print ("Usuario ya existente")
+                                print("")
+                        
+                        
+                        
+                        
+                            elif userOld ["usuarios"] != user ["usuarios"] and userOld ["contraseñas"] != user ["contraseñas"]:
+                                comprobar = False
+                        
+                        
+                        
+                        if comprobar == False:
+                            print ("Usuario agregado correctamente")
+                            print("")
+                            guardado.append(user)
+                            a = True
                 
             crear()
             
@@ -142,6 +147,9 @@ def datos ():
                     w.writerow(user)   
               
             datos()
+
+
+
 
 
 
