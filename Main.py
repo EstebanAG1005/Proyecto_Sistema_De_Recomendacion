@@ -1,20 +1,38 @@
-from DataBase import *
-import Usuarios as usuarios
+#from DataBase import *
+#import Usuarios as usuarios
+#usuarios.datos()
 
-run = True
-usuarios.datos()
-while run:
+print("---------- Bienvenid@ ----------")
+
+def pedirNumeroEntero():
+ 
+    correcto=False
+    num=0
+    while(not correcto):
+        try:
+            num = int(input("Ingrese la opción que desee: "))
+            correcto=True
+        except ValueError:
+            print(' \n Error, introduce un numero entero \n')
+     
+    return num
+ 
+run = False
+op = 0
+
+while not run:
     
-    print("---------- Bienvenid@ ----------")
     print("1. Realizar una recomendacion\n2.Salir del Programa")
-    op = input("Ingrese la opcion a realizar: ")
+    op = pedirNumeroEntero()
 
     # Empezar el con el sistema de recomendacion
-    if op == "1":
+    if op == 1:
         print("")
         print("Procesando opciones\n")
 
-    if op == "2":
+    elif op == 2:
         print("")
         print("Gracias por utlizar el programa :)\n ")
-        run = False
+        run = True
+    else:
+        print("\n Ingrese un numero entre 1 y 2 \n")
