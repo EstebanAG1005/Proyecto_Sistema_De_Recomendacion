@@ -1,6 +1,5 @@
 # Generar los Restaurante
-import numpy as np
-import random
+
 import pandas as pd
 from neo4j import GraphDatabase
 
@@ -11,7 +10,7 @@ transaction_list = df.values.tolist()
 transaction_execution_commands = []
 
 for i in transaction_list:
-    neo4j_create_statemenet = "create (n:Restaurante {Especialidad: '" + str(i[0]) + "', Nombre: '" + str(i[1]) + "'}) "
+    neo4j_create_statemenet = "create (n:Restaurante {Nombre: '" + str(i[0]) + "', Especialidad: '" + str(i[1]) + "', Precio: '" + str(i[2]) + "', Ambiente: '" + str(i[3]) + "'}) "
     transaction_execution_commands.append(neo4j_create_statemenet)
 
 
