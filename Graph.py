@@ -32,6 +32,14 @@ def Buscar(Especialidad, Precio, Ambiente):
     mas = session.run(neo4j_create_statemenet)
 
     Recomendacion = list(mas)
-    print("Por tus respuestas dadas a nuestro sistema, te recomendamos consumir en" )
-    print(Recomendacion)
-
+    
+    
+    if Recomendacion == []:
+        print("\n Parece que no se ha encontrado nada relacionado en la base de datos :(,")
+        print("prueba a ingresar los datos como se muestra en las preguntas o intentar realizar otras elecciones :)\n")
+        
+    else:
+        print("\nPor tus respuestas dadas a nuestro sistema, te recomendamos consumir en" )
+        print("")
+        print(Recomendacion)
+    
