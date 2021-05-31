@@ -17,8 +17,7 @@ def Agregar(Nombre, Especialidad, Precio, Ambiente):
 
 
 def Borrar(Nombre):
-    q = """MATCH (n {nombre:'%s'}) DETACH DELETE n
+    q = """MATCH (n:Restaurante {Nombre:"%s"}) DELETE n
     
-    
-    """ % (Nombre)
+    """ % Nombre
     session.run(q)
