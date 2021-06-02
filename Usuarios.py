@@ -5,10 +5,12 @@ import csv
 
 def datos ():
     print("--------------- Sistema de Recomendacion de Restaurantes ---------------")
-    print("¿Ya tienes una cuenta?")
+    print("\n¿Ya tienes una cuenta?")
     print("1. Iniciar Sesión")
-    print("¿Eres nuevo aquí?")
+    print("\n¿Eres nuevo aquí?")
     print("2. Registrarse")
+    print("\n¿Deseas ingresar en otro momento?")
+    print("3. Salir")
     print("")
 
     global opcion_datos
@@ -23,7 +25,7 @@ def datos ():
          print("\nEl valor ingresado no es un número, por favor, ingrese un número")
      
      #Si el número es menor que 1 o mayor que 3
-    while opcion_datos < 1 or opcion_datos > 2:
+    while opcion_datos < 1 or opcion_datos > 3:
         #Se imprime un mensaje de error
         print("\nNúmero fuera de rango, por favor ingresar otra vez:")
      #Se crea Defensa del rango
@@ -40,7 +42,7 @@ def datos ():
             
             
     #Se crea "Loop" de las opciones, mientras lo ingresado no sea 3
-    while opcion_datos !=3:   
+    while opcion_datos !=4:   
         if opcion_datos == 1:
             userlista = []
 
@@ -135,21 +137,18 @@ def datos ():
                             print("")
                             guardado.append(user)
                             a = True
-                
             crear()
-            
             with open ("usuarios.csv" , "w") as f:
                 w = csv.DictWriter(f, guardado[0].keys())
                 w.writeheader()
                 for user in guardado:
-                    w.writerow(user)   
+                    w.writerow(user)
+                    
+        if opcion_datos == 3:
+            print("\nMuchas Gracias por usar nuestro programa ")
+            quit()
+            
+            
+               
               
             datos()
-
-
-
-
-
-
-
-
