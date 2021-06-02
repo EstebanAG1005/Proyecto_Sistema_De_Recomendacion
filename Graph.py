@@ -1,6 +1,9 @@
+import csv
+
 from neo4j import GraphDatabase
 import re
 import random
+from csv import writer
 
 db = GraphDatabase.driver("bolt://localhost:7687", auth=("neo4j", "12345"))
 
@@ -32,14 +35,31 @@ def Buscar(Especialidad, Precio, Ambiente):
     mas = session.run(neo4j_create_statemenet)
 
     Recomendacion = list(mas)
-    
-    
-    if Recomendacion == []:
-        print("\n Parece que no se ha encontrado nada relacionado en la base de datos :(,")
-        print("prueba a ingresar los datos como se muestra en las preguntas o intentar realizar otras elecciones :)\n")
-        
-    else:
-        print("\nPor tus respuestas dadas a nuestro sistema, te recomendamos consumir en" )
-        print("")
-        print(Recomendacion)
-    
+    print("\nPor tus respuestas dadas a nuestro sistema, te recomendamos consumir en")
+    print(Recomendacion)
+
+
+def Add(Nombre, Especialidad, Precio, Ambiente):
+    List = [Nombre, Especialidad, Precio, Ambiente]
+
+    with open('export.csv', 'a') as f_object:
+        # Pass this file object to csv.writer()
+        # and get a writer object
+        writer_object = writer(f_object)
+
+        # Pass the list as an argument into
+        # the writerow()
+        writer_object.writerow(List)
+
+        # Close the file object
+        f_object.close()
+
+
+def delete(Restaurante):
+    with open("export.csv", "r+") as f:
+        new_f = f.readlines()
+        f.seek(0)
+        for line in new_f:
+            if Restaurante not in line:
+                f.write(line)
+        f.truncate()

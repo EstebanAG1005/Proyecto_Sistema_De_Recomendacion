@@ -3,8 +3,6 @@
 # Natanael Girón
 import csv
 
-
-
 def datos ():
     print("--------------- Sistema de Recomendacion de Restaurantes ---------------")
     print("¿Ya tienes una cuenta?")

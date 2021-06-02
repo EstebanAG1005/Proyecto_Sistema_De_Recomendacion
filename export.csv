@@ -1,4 +1,4 @@
-﻿Nombre,Especialidad,Precio,Ambiente 
+﻿Nombre,Especialidad,Precio,Ambiente
 Pollo Pinulito,Pollo,Bajo,Comida Rapida
 KFC,Pollo,Medio,Comida Rapida
 Macdonalds,Hamburguesas,Medio,Comida Rapida
@@ -38,3 +38,6 @@ Mr Sushi,Sushi,Medio,Serio
 Kloster,Mariscos,Alto,Serio
 Pizza Vesuvio,Pizza,Alto,Serio
 Mr Taco,Tacos,Medio,Comida Rapida
+
+
+

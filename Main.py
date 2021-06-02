@@ -39,6 +39,7 @@ while run:
         Ambiente = am.title()
 
         Graph.Agregar(Nombre, Especialidad, Precio, Ambiente)
+        Graph.Add(Nombre, Especialidad, Precio, Ambiente)
 
     if op == 3:
         print("\n------Eliminar Informacion a la base de datos----------")
@@ -46,6 +47,7 @@ while run:
         Restaurante = Res.title()
 
         Graph.Borrar(Restaurante)
+        Graph.delete(Restaurante)
 
     if op == 4:
         print("\nGracias por utlizar el programa :)\n ")
