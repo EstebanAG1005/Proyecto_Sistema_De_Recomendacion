@@ -81,9 +81,12 @@ def datos ():
                 for userexist in userlista:
                     if userexist ["usuarios"] == user1 ["usuarios"] and userexist ["contra"] == user1 ["contra"]:
                         comprobar = True
+                        break
                                 
                     elif userexist ["usuarios"] != user1 ["usuarios"] and userexist ["contra"] != user1 ["contra"]:
                         comprobar = False
+                        print ("Usuario no  existente, favor ingrese nuevamente")
+                        print("")
                                 
                                 
                     
