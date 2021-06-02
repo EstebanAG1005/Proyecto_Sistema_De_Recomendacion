@@ -5,6 +5,21 @@ op1 = 0
 op2 = 0
 op3 = 0
 
+def pedirNumeroEntero():
+
+    correcto=False
+    num=0
+    while(not correcto):
+        try:
+            num = int(input("Ingrese la opción que desee: "))
+            correcto=True
+        except ValueError:
+            print(' \n Error, introduce un numero entero \n')
+
+    return num
+
+op = 0
+
 while run:
 
     print("\nSistema de Recomendacion de Restaurantes")
