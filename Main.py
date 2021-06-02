@@ -1,9 +1,12 @@
 import Graph 
+import Usuarios as Usuarios
+
 run = True
 op1 = 0
 op2 = 0
 op3 = 0
 
+Usuarios.datos()
 def pedirNumeroEntero():
 
     correcto=False
