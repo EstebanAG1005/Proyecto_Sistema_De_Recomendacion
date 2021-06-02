@@ -38,6 +38,9 @@ def Buscar(Especialidad, Precio, Ambiente):
     print("\nPor tus respuestas dadas a nuestro sistema, te recomendamos consumir en")
     print(Recomendacion)
 
+    result = re.split("[']", str(Recomendacion))  # Se separa por apostrofe
+    print(result[1])
+
 
 def Add(Nombre, Especialidad, Precio, Ambiente):
     List = [Nombre, Especialidad, Precio, Ambiente]
