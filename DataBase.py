@@ -1,3 +1,21 @@
+# Guatemala, 4 de Junio del 2021
+# Universidad del Valle de Guatemala
+#-------------------------------------------------------------------------
+# Ingeniería en Ciencias de la Computación y Tecnologías de la Información
+# Algoritmos y Estructura de Datos
+# Tercer Semestre
+#-------------------------------------------------------------------------
+# @Autores
+# Esteban Aldana Guerra 20591
+# Rolando Natanael Girón 20029
+# Kenneth Eduardo Gálvez 20079
+#-------------------------------------------------------------------------
+# Clase DataBase.py
+# Clase encargada de realizar el primer commit de la Base de Datos en Neo4J
+#-------------------------------------------------------------------------
+# Referencia: https://www.youtube.com/watch?v=yluHRteVBNI&t=400s
+#-------------------------------------------------------------------------
+
 # Generar los Restaurante
 
 import pandas as pd
@@ -22,4 +40,7 @@ def execute_transactions(transaction_execution_commands):
 
 
 execute_transactions(transaction_execution_commands)
+
+
+
 
