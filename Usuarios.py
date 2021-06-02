@@ -1,6 +1,19 @@
-# Kenneth Galvez
-# Esteban Aldana
-# Natanael Girón
+# Guatemala, 4 de Junio del 2021
+# Universidad del Valle de Guatemala
+#-------------------------------------------------------------------------
+# Ingeniería en Ciencias de la Computación y Tecnologías de la Información
+# Algoritmos y Estructura de Datos
+# Tercer Semestre
+#-------------------------------------------------------------------------
+# @Autores
+# Esteban Aldana Guerra 20591
+# Rolando Natanael Girón 20029
+# Kenneth Eduardo Gálvez 20079
+#-------------------------------------------------------------------------
+# Clase Usuarios.py
+# Clase que será la encargada de registrar e iniciar sesion a los Usuarios
+#-------------------------------------------------------------------------
+
 import csv
 
 def datos ():
@@ -76,7 +89,7 @@ def datos ():
                     
                 if comprobar == True:
                     print("")
-                    opcion_datos = 3
+                    break
                     
                 elif comprobar == False:
                     print ("Usuario no  existente, favor ingrese nuevamente")
@@ -138,6 +151,7 @@ def datos ():
                             guardado.append(user)
                             a = True
             crear()
+            
             with open ("usuarios.csv" , "w") as f:
                 w = csv.DictWriter(f, guardado[0].keys())
                 w.writeheader()
@@ -151,4 +165,12 @@ def datos ():
             
                
               
-            datos()
+        datos()
+
+
+
+
+
+
+
+
