@@ -60,14 +60,14 @@ def datos ():
                     datos()
                     
             if users != "M":
-                user1["contraseñas"] = input("Introduzca una contraseña: ")
+                user1["contra"] = input("Introduzca una contraseña: ")
                         
                 comprobar = False    
                 for userexist in userlista:
-                    if userexist ["usuarios"] == user1 ["usuarios"] and userexist ["contraseñas"] == user1 ["contraseñas"]:
+                    if userexist ["usuarios"] == user1 ["usuarios"] and userexist ["contra"] == user1 ["contra"]:
                         comprobar = True
                                 
-                    elif userexist ["usuarios"] != user1 ["usuarios"] and userexist ["contraseñas"] != user1 ["contraseñas"]:
+                    elif userexist ["usuarios"] != user1 ["usuarios"] and userexist ["contra"] != user1 ["contra"]:
                         comprobar = False
                                 
                                 
@@ -113,11 +113,11 @@ def datos ():
                         datos()
                         
                     if users != "M":
-                        user["contraseñas"] = input("Introduzca una contraseña: ")
+                        user["contra"] = input("Introduzca una contraseña: ")
             
                         comprobar = False    
                         for userOld in guardado:
-                            if userOld ["usuarios"] == user ["usuarios"] and userOld ["contraseñas"] == user ["contraseñas"]:
+                            if userOld ["usuarios"] == user ["usuarios"] and userOld ["contra"] == user ["contra"]:
                                 comprobar = True
                                 print ("Usuario ya existente")
                                 print("")
@@ -125,7 +125,7 @@ def datos ():
                         
                         
                         
-                            elif userOld ["usuarios"] != user ["usuarios"] and userOld ["contraseñas"] != user ["contraseñas"]:
+                            elif userOld ["usuarios"] != user ["usuarios"] and userOld ["contra"] != user ["contra"]:
                                 comprobar = False
                         
                         
@@ -145,6 +145,7 @@ def datos ():
                     w.writerow(user)   
               
             datos()
+
 
 
 
