@@ -27,6 +27,7 @@ def datos ():
     print("")
 
     global opcion_datos
+    global comprobar
     a= False
     c = False
     while not a:
@@ -38,7 +39,7 @@ def datos ():
          print("\nEl valor ingresado no es un número, por favor, ingrese un número")
      
      #Si el número es menor que 1 o mayor que 3
-    while opcion_datos < 1 or opcion_datos > 3:
+    while opcion_datos < 1 or opcion_datos > 2:
         #Se imprime un mensaje de error
         print("\nNúmero fuera de rango, por favor ingresar otra vez:")
      #Se crea Defensa del rango
@@ -55,7 +56,7 @@ def datos ():
             
             
     #Se crea "Loop" de las opciones, mientras lo ingresado no sea 3
-    while opcion_datos !=4:   
+    while opcion_datos !=3:   
         if opcion_datos == 1:
             userlista = []
 
@@ -81,18 +82,17 @@ def datos ():
                 for userexist in userlista:
                     if userexist ["usuarios"] == user1 ["usuarios"] and userexist ["contra"] == user1 ["contra"]:
                         comprobar = True
-                        break
+                        
                                 
                     elif userexist ["usuarios"] != user1 ["usuarios"] and userexist ["contra"] != user1 ["contra"]:
                         comprobar = False
-                        print ("Usuario no  existente, favor ingrese nuevamente")
-                        print("")
+                        
                                 
                                 
                     
                 if comprobar == True:
                     print("")
-                    break
+                    opcion_datos = 3
                     
                 elif comprobar == False:
                     print ("Usuario no  existente, favor ingrese nuevamente")
@@ -161,14 +161,8 @@ def datos ():
                 for user in guardado:
                     w.writerow(user)
                     
-        if opcion_datos == 3:
-            print("\nMuchas Gracias por usar nuestro programa ")
-            quit()
-            
-            
-               
-              
-        datos()
+        
+            datos()
 
 
 
