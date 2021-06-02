@@ -1,3 +1,19 @@
+# Guatemala, 4 de Junio del 2021
+# Universidad del Valle de Guatemala
+#-------------------------------------------------------------------------
+# Ingeniería en Ciencias de la Computación y Tecnologías de la Información
+# Algoritmos y Estructura de Datos
+# Tercer Semestre
+#-------------------------------------------------------------------------
+# @Autores
+# Esteban Aldana Guerra 20591
+# Rolando Natanael Girón 20029
+# Kenneth Eduardo Gálvez 20079
+#-------------------------------------------------------------------------
+# Clase Main.py
+# Clase que será la encargada de la interacción con el Usuario
+#-------------------------------------------------------------------------
+
 import Graph
 import Usuarios as Usuarios
 run = True
@@ -5,7 +21,7 @@ op1 = 0
 op2 = 0
 op3 = 0
 
-#Usuarios.datos()
+Usuarios.datos()
 def pedirNumeroEntero():
 
     correcto=False
@@ -24,8 +40,8 @@ op = 0
 
 while run:
 
-    print("\nSistema de Recomendacion de Restaurantes")
-    print("1.Realizar una recomendacion\n2.Agregar Informacion a la Base de Datos\n3.Eliminar "
+    print("\n                     Sistema de Recomendacion de Restaurantes")
+    print("\n1.Realizar una recomendacion\n2.Agregar Informacion a la Base de Datos\n3.Eliminar "
           "informacion de la base de datos\n4.Salir del Programa")
     op = pedirNumeroEntero()
 
@@ -34,8 +50,7 @@ while run:
         print(
             "\nInstrucciones: A continuacion se le presentara un listado de preguntas, las cuales esperamos que "
             "responda segun sus antojos\n")
-        esp = input("¿Qué especialidad de comida quisiera comer hoy? (Ejemplo: Pizza-Pollo-Hamburguesa-Otros(Ingrese "
-                    "Lo que usted busca): ")
+        esp = input("¿Qué especialidad de comida quisiera comer hoy? (Ejemplo: Pizza-Pollo-Hamburguesas...) ")
         Especialidad = esp.title()
         conf = True
         while conf:  
