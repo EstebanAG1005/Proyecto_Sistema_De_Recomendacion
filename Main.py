@@ -34,13 +34,25 @@ while run:
         print(
             "\nInstrucciones: A continuacion se le presentara un listado de preguntas, las cuales esperamos que "
             "responda segun sus antojos\n")
-        esp = input("¿Qué especialidad de comida quisiera comer hoy? (Opciones: Pizza-Pollo-Hamburguesa-Otros(Ingrese "
+        esp = input("¿Qué especialidad de comida quisiera comer hoy? (Ejemplo: Pizza-Pollo-Hamburguesa-Otros(Ingrese "
                     "Lo que usted busca): ")
         Especialidad = esp.title()
-        pe = input("¿En que Rango de Precio le interesa que este su Restaurante? (Opciones: Bajo-Medio-Alto): ")
-        Precio = pe.title()
-        am = input("¿En que Ambiente le interesa que se encuentre su restaurante? (Opciones: Comida Rapida-Serio) ")
-        Ambiente = am.title()
+        conf = True
+        while conf:  
+          pe = input("¿En que Rango de Precio le interesa que este su Restaurante? (Opciones: Bajo-Medio-Alto): ")
+          if (pe != "Bajo") and (pe != "Medio") and (pe != "Alto"):
+            print ("\n Unicamente se permite la opcion de Bajo, Medio y Alto \n")
+          else: 
+            Precio = pe.title()
+            conf = False
+        conf2 = True
+        while conf2:
+          am = input("¿En que Ambiente le interesa que se encuentre su restaurante? (Opciones: Comida Rapida-Serio): ")
+          if (am != "Comida Rapida") and (am != "Serio"):
+            print ("\n Unicamente se permite la opcion de Comida Rapida y Serio \n")
+          else: 
+            Ambiente = am.title()
+            conf2 = False
 
         Graph.Buscar(Especialidad, Precio, Ambiente)
 
