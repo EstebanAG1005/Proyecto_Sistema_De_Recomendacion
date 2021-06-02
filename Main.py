@@ -46,6 +46,7 @@ while run:
         print("\n------Agregar Informacion a la base de datos----------")
         nom = input("Ingrese el nombre del Restaurante que desea agregar: ")
         Nombre = nom.title()
+        Espe = input("Ingrese la Especialidad de este restaurante: (Opciones: Pizza-Pollo-Hamburguesas-Otros)")
         Especialidad = Espe.title()
         pe = input("Ingrese el Precio de promedio de este restaurante (Bajo)(Medio)(Alto): ")
         Precio = pe.title()
