@@ -1,9 +1,11 @@
-import Graph 
+import Graph
+import Usuarios as Usuarios
 run = True
 op1 = 0
 op2 = 0
 op3 = 0
 
+#Usuarios.datos()
 def pedirNumeroEntero():
 
     correcto=False
@@ -44,13 +46,13 @@ while run:
 
     elif op == 2:
         print("\n------Agregar Informacion a la base de datos----------")
-        nom = input(" \n Ingrese el nombre del Restaurante que desea agregar: \n")
+        nom = input(" \n Ingrese el nombre del Restaurante que desea agregar: ")
         Nombre = nom.title()
-        Espe = input(" \n Ingrese la Especialidad de este restaurante: (Opciones: Pizza-Pollo-Hamburguesas-Otros) \n")
+        Espe = input(" \n Ingrese la Especialidad de este restaurante: (Opciones: Pizza-Pollo-Hamburguesas-...): ")
         Especialidad = Espe.title()
         conf = True
         while conf:  
-          pe = input(" \nIngrese el Precio promedio de este restaurante (Bajo)(Medio)(Alto): \n")
+          pe = input(" \nIngrese el Precio promedio de este restaurante (Bajo)(Medio)(Alto): ")
           if (pe != "Bajo") and (pe != "Medio") and (pe != "Alto"):
             print ("\n Unicamente se permite la opcion de Bajo, Medio y Alto \n")
           else: 
@@ -58,7 +60,7 @@ while run:
             conf = False
         conf2 = True
         while conf2:
-          am = input(" \nIngrese el Ambiente de este restaurante (Comida Rapida) (Serio) \n")
+          am = input(" \nIngrese el Ambiente de este restaurante (Comida Rapida) (Serio): ")
           if (am != "Comida Rapida") and (am != "Serio"):
             print ("\n Unicamente se permite la opcion de Comida Rapida y Serio \n")
           else: 
@@ -73,7 +75,7 @@ while run:
 
     elif op == 3:
         print("\n------Eliminar Informacion a la base de datos----------")
-        Res = input('Ingrese el nombre del Restaurante que desea eliminar: ')
+        Res = input('\nIngrese el nombre del Restaurante que desea eliminar: ')
         Restaurante = Res.title()
 
         Graph.Borrar(Restaurante)
