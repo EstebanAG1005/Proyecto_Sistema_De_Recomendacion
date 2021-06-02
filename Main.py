@@ -1,12 +1,9 @@
 import Graph 
-import Usuarios as Usuarios
-
 run = True
 op1 = 0
 op2 = 0
 op3 = 0
 
-Usuarios.datos()
 def pedirNumeroEntero():
 
     correcto=False
@@ -35,7 +32,8 @@ while run:
         print(
             "\nInstrucciones: A continuacion se le presentara un listado de preguntas, las cuales esperamos que "
             "responda segun sus antojos\n")
-        esp = input("¿Qué especialidad de comida quisiera comer hoy? (Ejemplo: Pizza-Pollo-Hamburguesas...) ")
+        esp = input("¿Qué especialidad de comida quisiera comer hoy? (Opciones: Pizza-Pollo-Hamburguesa-Otros(Ingrese "
+                    "Lo que usted busca): ")
         Especialidad = esp.title()
         pe = input("¿En que Rango de Precio le interesa que este su Restaurante? (Opciones: Bajo-Medio-Alto): ")
         Precio = pe.title()
@@ -46,14 +44,27 @@ while run:
 
     elif op == 2:
         print("\n------Agregar Informacion a la base de datos----------")
-        nom = input("Ingrese el nombre del Restaurante que desea agregar: ")
+        nom = input(" \n Ingrese el nombre del Restaurante que desea agregar: \n")
         Nombre = nom.title()
-        Espe = input("Ingrese la Especialidad de este restaurante: (Opciones: Pizza-Pollo-Hamburguesas-Otros)")
+        Espe = input(" \n Ingrese la Especialidad de este restaurante: (Opciones: Pizza-Pollo-Hamburguesas-Otros) \n")
         Especialidad = Espe.title()
-        pe = input("Ingrese el Precio de promedio de este restaurante (Bajo)(Medio)(Alto): ")
-        Precio = pe.title()
-        am = input("Ingrese el Ambiente de este restaurante (Comida Rapida) (Serio) ")
-        Ambiente = am.title()
+        conf = True
+        while conf:  
+          pe = input(" \nIngrese el Precio promedio de este restaurante (Bajo)(Medio)(Alto): \n")
+          if (pe != "Bajo") and (pe != "Medio") and (pe != "Alto"):
+            print ("\n Unicamente se permite la opcion de Bajo, Medio y Alto \n")
+          else: 
+            Precio = pe.title()
+            conf = False
+        conf2 = True
+        while conf2:
+          am = input(" \nIngrese el Ambiente de este restaurante (Comida Rapida) (Serio) \n")
+          if (am != "Comida Rapida") and (am != "Serio"):
+            print ("\n Unicamente se permite la opcion de Comida Rapida y Serio \n")
+          else: 
+            Ambiente = am.title()
+            conf2 = False
+            
 
         Graph.Agregar(Nombre, Especialidad, Precio, Ambiente)
         print("")
