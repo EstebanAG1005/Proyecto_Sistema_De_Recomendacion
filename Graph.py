@@ -1,3 +1,24 @@
+# Guatemala, 4 de Junio del 2021
+# Universidad del Valle de Guatemala
+#-------------------------------------------------------------------------
+# Ingeniería en Ciencias de la Computación y Tecnologías de la Información
+# Algoritmos y Estructura de Datos
+# Tercer Semestre
+#-------------------------------------------------------------------------
+# @Autores
+# Esteban Aldana Guerra 20591
+# Rolando Natanael Girón 20029
+# Kenneth Eduardo Gálvez 20079
+#-------------------------------------------------------------------------
+# Clase Graph.py
+# Clase que será la encargada de las operaciones en la Base de Datos
+#-------------------------------------------------------------------------
+# Referencias:
+# https://www.geeksforgeeks.org/how-to-append-a-new-row-to-an-existing-csv-file/
+# https://stackoverflow.com/questions/56987312/how-to-delete-only-one-row-in-csv-with-python
+# https://neo4j.com/developer/cypher/filtering-query-results/
+#-------------------------------------------------------------------------
+
 import csv
 
 from neo4j import GraphDatabase
@@ -35,11 +56,28 @@ def Buscar(Especialidad, Precio, Ambiente):
     mas = session.run(neo4j_create_statemenet)
 
     Recomendacion = list(mas)
-    print("\nPor tus respuestas dadas a nuestro sistema, te recomendamos consumir en")
-    print(Recomendacion)
+    if Recomendacion == []:
+        print("\n Parece que no se ha encontrado nada relacionado en la base de datos :(,")
+        print("prueba a ingresar los datos como se muestra en las preguntas o intentar realizar otras elecciones :)\n")
+        
+    else:
+        print("\nPor tus respuestas dadas a nuestro sistema, te recomendamos consumir en" )
+        print("")
+        
+        
 
+    cont = 0
     result = re.split("[']", str(Recomendacion))  # Se separa por apostrofe
-    print(result[1])
+    for i in range(len(result)):
+        cont = cont + 1
+        if cont%2 != 0 :
+            numero = cont
+            try:
+                print(result[numero])
+            except IndexError:
+                print("")
+                    
+            
 
 
 def Add(Nombre, Especialidad, Precio, Ambiente):
@@ -66,3 +104,4 @@ def delete(Restaurante):
             if Restaurante not in line:
                 f.write(line)
         f.truncate()
+
